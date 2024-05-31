@@ -260,7 +260,7 @@ def update_chat(id):
     description = request.json['description']
     user_id = request.json['user_id']
     created_at = request.json['created_at']
-    cur.execute('''UPDATE nutritional_information SET title = %s, specification = %s, description = %s, kcal = %s, image = %s, category = %s  WHERE id = %s''', (subject, description, user_id, created_at))
+    cur.execute('''UPDATE chat SET title = %s, specification = %s, description = %s, kcal = %s, image = %s, category = %s  WHERE id = %s''', (subject, description, user_id, created_at))
     mysql.connection.commit()
     cur.close()
     return jsonify({'message': 'chat information updated successfully'})
